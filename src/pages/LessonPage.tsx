@@ -19,7 +19,7 @@ export default function LessonPage() {
     return (
       <div className="max-w-md mx-auto px-4 py-10 text-center">
         <p className="text-gray-600">Lesson not found.</p>
-        <button className="mt-4 text-duo-blue font-bold" onClick={() => navigate("/")}>
+        <button className="mt-4 text-duo-blue font-bold" onClick={() => navigate("/lessons")}>
           Back to home
         </button>
       </div>
@@ -56,7 +56,7 @@ export default function LessonPage() {
             🔥 {finished.streak} day streak
           </div>
           <button
-            onClick={() => navigate("/")}
+            onClick={() => navigate("/lessons")}
             className="w-full bg-duo-green hover:bg-duo-green-dark text-white font-extrabold py-3 rounded-xl border-b-4 border-duo-green-dark active:border-b-0 active:translate-y-1 transition"
           >
             Continue

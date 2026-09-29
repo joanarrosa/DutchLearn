@@ -93,3 +93,8 @@ export function isStreakActive(progress: Progress): boolean {
   if (!progress.lastActiveDate) return false;
   return progress.lastActiveDate === todayStr() || progress.lastActiveDate === yesterdayStr();
 }
+
+/** Stories share the completed-lessons record, under their own id prefix. */
+export function storyProgressId(storyId: string): string {
+  return `story:${storyId}`;
+}
