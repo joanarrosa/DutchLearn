@@ -67,3 +67,36 @@ export interface Progress {
   todayXp: number;
   todayDate: string | null;
 }
+
+export type StoryLevel = "A0" | "A1" | "A2";
+
+export type StoryTheme = "daily" | "netherlands" | "travel" | "fiction";
+
+export interface StorySentence {
+  nl: string;
+  en: string;
+  /** Optional short grammar/culture note for this sentence. */
+  note?: string;
+}
+
+/** A short graded reader: read sentence by sentence, with audio and translation. */
+export interface Story {
+  id: string;
+  title: string;
+  titleEn: string;
+  level: StoryLevel;
+  theme: StoryTheme;
+  emoji: string;
+  summary: string;
+  sentences: StorySentence[];
+}
+
+/** A word the reader tapped and saved to review later. */
+export interface SavedWord {
+  nl: string;
+  en: string;
+  /** The sentence it was saved from, for context. */
+  sentence: string;
+  storyId: string;
+  savedAt: string;
+}
